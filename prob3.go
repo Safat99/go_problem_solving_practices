@@ -19,8 +19,11 @@ func main() {
 	})
 
 	// fmt.Println("sorted string is: ", strrunes)
+	// fmt.Println("length of the strrunes: ", strrunes)
+	// fmt.Println("strrunes[len(strrunes)] --> ", len(strrunes))
 
-	for i := 0; i < len(strrunes)-2; i++ {
+	for i := 0; i <= len(strrunes)-2; i++ {
+		// fmt.Println("index: ", i)
 		if strrunes[i] != strrunes[i+1] {
 			count++
 		}
@@ -31,7 +34,7 @@ func main() {
 	if count%2 == 0 {
 		fmt.Println("CHAT WITH HER!")
 	} else {
-		fmt.Println("IGONER HIM!")
+		fmt.Println("IGNORE HIM!")
 	}
 
 }
