@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello")
 	var n int
 	fmt.Scan(&n)
 
@@ -28,6 +27,10 @@ func main() {
 		} else {
 			continue
 		}
+	}
+
+	for i := 0; i < len(nums); i++ {
+		fmt.Printf("%d ", nums[i])
 	}
 
 }
