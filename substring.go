@@ -8,36 +8,45 @@ func main() {
 	fmt.Scan(&a, &b)
 
 	var c, d, pointer, start_index int
+	var result bool
+	result = false
 	c = len(a)
 	d = len(b)
 
 	fmt.Println("len a and b are ", c, d)
 
+	if d > c {
+		fmt.Println("substring is false")
+		return
+	}
+
 	for i := 0; i < c; i++ {
 		if a[i] == b[pointer] {
 			pointer++
 			start_index = i
-			break
+
+			for pointer < d {
+				if a[start_index+1] == b[pointer] {
+					pointer++
+					start_index++
+					fmt.Println("pointer value is: ", pointer)
+				} else {
+					break
+				}
+			}
+
+			if pointer == d {
+				fmt.Println("Substring is true")
+				result = true
+				break
+			}
 		} else {
-			continue
+			pointer = 0
+			start_index = 0
 		}
 	}
 
-	fmt.Println("pointer value: ", pointer)
-
-	for pointer < d {
-		if a[start_index+1] == b[pointer] {
-			pointer++
-			start_index++
-		} else {
-			break
-		}
-	}
-
-	if pointer == d {
-		fmt.Println("Substring is true")
-	} else {
+	if result == false {
 		fmt.Println("substring is false")
 	}
-
 }
